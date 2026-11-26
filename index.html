@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <title>Слайдер</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .slider {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        #main-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: white;
+            font-size: 50px;
+            padding: 20px;
+            cursor: pointer;
+            text-shadow: 0 2px 5px black;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .bottom {
+            padding: 30px 10px;
+            text-align: center;
+        }
+
+        .thumbs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .thumb {
+            width: 130px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            opacity: 0.45;
+            transition: 0.2s;
+        }
+
+        .thumb:hover {
+            opacity: 0.8;
+        }
+
+        .thumb.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <button class="arrow prev" onclick="prev()"><</button>
+        <img id="main-img" src="https://i.redd.it/xs5huy10hfk61.jpg" alt="">
+        <button class="arrow next" onclick="next()">></button>
+    </div>
+
+    <div class="bottom">
+        <div class="thumbs">
+            <img class="thumb active" src="https://i.redd.it/xs5huy10hfk61.jpg" onclick="show(0)">
+            <img class="thumb" src="https://i.redd.it/tddy4990hfk61.jpg" onclick="show(1)">
+            <img class="thumb" src="https://i.pinimg.com/originals/7a/4a/66/7a4a668a7e4e19f9a0e39faa105aad5b.png" onclick="show(2)">
+            <img class="thumb" src="https://i.redd.it/5lt1w9ewwm421.jpg" onclick="show(3)">
+            <img class="thumb" src="https://preview.redd.it/1920x1080-fuji-v0-1lba9vomb5g51.png?width=1080&crop=smart&auto=webp&s=92f35b5dfc5bf36f9146beda436221de213eb73d" onclick="show(4)">
+            <img class="thumb" src="https://img1.akspic.ru/crops/1/6/0/6/7/176061/176061-yablochnyj_pejzazh-yabloko-illustracia-prirodnyj_landshaft-purpur-1920x1080.jpg" onclick="show(5)">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
